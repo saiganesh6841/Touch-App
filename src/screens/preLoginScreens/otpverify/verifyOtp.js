@@ -1,10 +1,14 @@
 import { Button, Card, CardMedia, Grid, Input, Link, Paper, TextField, Typography } from "@material-ui/core"
 import axios from "axios";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { Auth } from "../../../navigationStack/navigation";
 
 
 const VerifyOtp=()=>{
     const [otp, setOtp] = useState(['', '', '', '','','']);
+    const navigate=useNavigate()
+    const {loginTrue}=useContext(Auth)
 
   const handleInputChange = (index, value) => {
     const newOtp = [...otp];
@@ -26,6 +30,9 @@ const VerifyOtp=()=>{
       .then(response => {
         // Handle the API response here
         console.log('API Response:', response.data);
+        loginTrue()
+        navigate("/home")
+
       })
       .catch(error => {
         console.error('Error during API call:', error);

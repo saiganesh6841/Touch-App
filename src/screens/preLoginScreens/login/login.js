@@ -1,10 +1,11 @@
 
 import { Avatar, Button, Checkbox, FormControlLabel, Grid, Link, Paper, TextField, Typography } from "@mui/material"
 import axios from "axios"
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import { NavLink, useNavigate } from "react-router-dom";
 import { Details } from "@mui/icons-material";
+import { Auth } from "../../../navigationStack/navigation";
 
 
 const Login=()=>{
@@ -13,6 +14,9 @@ const Login=()=>{
     const [userName,setUserName]=useState("")
     const [password,setPassword]=useState("")
     const navigate=useNavigate()
+    console.log("hell")
+    const {loginTrue}=useContext(Auth)
+    console.log(loginTrue)
 
   const handleUsername=(e)=>{
     setUserName(e.target.value)
@@ -51,6 +55,7 @@ const Login=()=>{
         localStorage.setItem("userid",res.data.data.user.userid)
          console.log(res.data.data.user.userid)
         alert(res.data.message)
+        loginTrue()
         navigate("/home")
         
       })

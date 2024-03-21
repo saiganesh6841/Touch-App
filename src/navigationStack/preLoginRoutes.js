@@ -17,8 +17,8 @@ const PreLoginRoutes=()=>{
             <Route path="/" Component={Login}/>
             <Route path="/signup" Component={Register}/>
             <Route path="/verifyotp" Component={VerifyOtp} />
-            <Route path="/home" Component={HomePage} />
-            <Route path="/profile" Component={ProfileDetails}/>
+            {/* <Route path="/home" Component={HomePage} />
+            <Route path="/profile" Component={ProfileDetails}/> */}
          </Routes>
         </>
     )

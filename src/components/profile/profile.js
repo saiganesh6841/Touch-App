@@ -1,18 +1,21 @@
 import { Avatar, Grid, IconButton, Paper } from "@material-ui/core";
 import style from "./profile.module.css";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import LogoutOutlinedIcon from '@mui/icons-material/LogoutOutlined';
 import SettingsIcon from '@mui/icons-material/Settings';
 import {  useNavigate } from "react-router-dom";
+import { Auth } from "../../navigationStack/navigation";
 
 const ProfileDetails = () => {
+
   const [userInfo, setUserInfo] = useState(null);
   const [error, setError] = useState(null);
   const userid = localStorage.getItem("userid");
   const token = localStorage.getItem("token");
   const [show,setShow]=useState(false)
   const navigate=useNavigate()
+  const {logout}=useContext(Auth)
   const headers = {
     Authorization: `Bearer ${token}`,
   };
@@ -48,6 +51,7 @@ const ProfileDetails = () => {
     const logoutConfirmed = window.confirm("Are you sure you want to log out?");
     if(logoutConfirmed){
         navigate("/")
+        logout()
     }
   }
 
