@@ -1,0 +1,94 @@
+
+.paperStyle {
+    padding: 20px;
+    width: 600px;
+    height: 100vh;
+    margin: auto;
+    
+   
+  }
+  .touchStyle{
+    background: linear-gradient(135deg, #A80306, #E57E75);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-family: Merienda, cursive;
+    font-size: 50px;
+    font-weight: bold;
+    
+  }
+  .profile{
+    width: 500px;
+    height: 400px;
+    background: #378CE7;
+    margin: 50px auto;
+    border: 2px solid red;
+    border-radius: 20px;
+    display: grid;
+  }
+  .image{
+    width: 230px;
+    height: 230px;
+    margin: 140px auto;
+  }
+  /* div > span{
+    color: antiquewhite;
+    font-size: large;
+  }  */
+  .following{
+    position: absolute;
+    top: 260px;
+    left: 550px;
+    color: antiquewhite;
+    font-size: large;
+  }
+  .posts{
+    position: absolute;
+    top: 260px;
+    right: 550px;
+    color: antiquewhite;
+    font-size: large;
+  }
+  .followers{
+    position: absolute;
+    bottom: 300px;
+    left: 550px;
+    color: antiquewhite;
+    font-size: large;
+
+  }
+  .points{
+    position: absolute;
+    bottom: 300px;
+    right: 570px;
+    color: antiquewhite;
+    font-size: large;
+  }
+  .username{
+    position: absolute;
+    left: 668px;
+    bottom: 270px;
+    color: antiquewhite;
+  }
+.firstname{
+    position: absolute;
+    left: 696px;
+    bottom: 240px;
+    color: antiquewhite;
+  }
+  .logoutOption {
+    position: absolute;
+    top: 60px; 
+    right: 0;
+    background-color: #de3f13; /* Adjust the background color as needed */
+    color: white; /* Adjust the text color as needed */
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a box shadow for styling */
+  }
+  /* .divv{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+    align-items: end;
+  } */
