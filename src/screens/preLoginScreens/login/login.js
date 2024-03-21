@@ -66,7 +66,7 @@ const Login=()=>{
       });
   }
 
-const paperStyle={padding :20,height:"70vh",width:400 , margin:"40px auto"}
+const paperStyle={padding :20,height:"60vh",width:400 , margin:"90px auto"}
 const avatarStyle={backgroundColor:"#1bbd7e"}
 const btnStyle={margin:"8px 0"}
 const nameStyle = {display: "inline",color: "red",fontSize: "44px",flexGrow: 1,background: "linear-gradient(135deg, #A80306, #E57E75)",WebkitBackgroundClip: "text",backgroundClip: "text",color: "transparent",fontFamily: "Merienda, cursive"};
@@ -84,7 +84,7 @@ const nameStyle = {display: "inline",color: "red",fontSize: "44px",flexGrow: 1,b
          <TextField label="username/mobile No/email" placeholder="Enter username" variant="standard" fullWidth required onChange={handleUsername}/><br></br>
           <br></br>
           <TextField label="password" placeholder="Enter password" variant="standard" type="password" fullWidth required onChange={handlePassword} />  <br></br>
-          <FormControlLabel
+          {/* <FormControlLabel
                     control={
                     <Checkbox
                         name="checkedB"
@@ -92,7 +92,7 @@ const nameStyle = {display: "inline",color: "red",fontSize: "44px",flexGrow: 1,b
                     />
                     }
                     label="Remember me"
-                 />
+                 /> */}
                  <br></br> 
                  <Button type="submit" color="primary" variant="contained" style={btnStyle} fullWidth>Sign in</Button>
          </form>

@@ -12,9 +12,11 @@ const [login,setLogin]=useState(false)
 
 const loginTrue=()=>{
     setLogin(true)
+    sessionStorage.setItem("loggedIn","true")
 }
 const logout = () => {
-    setLogin(false); 
+    setLogin(false);
+    sessionStorage.removeItem("loggedIn") 
   };
 
     return(

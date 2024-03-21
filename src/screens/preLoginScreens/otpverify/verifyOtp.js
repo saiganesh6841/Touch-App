@@ -39,7 +39,7 @@ const VerifyOtp=()=>{
       });
   }
     
-    const paperStyle={padding :20,height:"80vh",width:350 , margin:"40px auto"}
+    const paperStyle={padding :20,height:"80vh",width:440 , margin:"70px auto"}
     const textStyle={width:"50px",padding:"10px",outline:"none",textAlign:"center"}
     const nameStyle = {display: "inline",color: "red",fontSize: "44px",flexGrow: 1,background: "linear-gradient(135deg, #A80306, #E57E75)",WebkitBackgroundClip: "text",backgroundClip: "text",color: "transparent",fontFamily: "Merienda, cursive"
   };

@@ -101,7 +101,7 @@ const Register = () => {
     
 
     //styles for register
-    const paperStyle = { padding: '30px 20px', width: 400, height:"90vh" ,margin: "30px auto" }
+    const paperStyle = { padding: '30px 20px', width: 450, height:"90vh" ,margin: "30px auto" }
     const headerStyle = { margin: 0 }
     const avatarStyle = { backgroundColor: '#1bbd7e' }
     const marginTop = { marginTop: 5 }
