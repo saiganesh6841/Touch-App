@@ -1,22 +1,30 @@
 import { BrowserRouter } from "react-router-dom"
 import PreLoginRoutes from "./preLoginRoutes"
 import PostLoginRoutes from "./postLoginRoutes"
-import { createContext, useState } from "react"
+import { createContext, useEffect, useState } from "react"
 
 
 export const Auth=createContext()
 
 const Navigation=()=>{
+  const [login, setLogin] = useState(() => {
+   
+    const loggedIn = sessionStorage.getItem("loggedIn")
+    return loggedIn === "true"
+})
 
-const [login,setLogin]=useState(false)
+useEffect(() => {
+    
+    sessionStorage.setItem("loggedIn", login ? "true" : "false")
+}, [login])
 
 const loginTrue=()=>{
     setLogin(true)
-    sessionStorage.setItem("loggedIn","true")
+    // sessionStorage.setItem("loggedIn","true")
 }
 const logout = () => {
     setLogin(false);
-    sessionStorage.removeItem("loggedIn") 
+    // sessionStorage.removeItem("loggedIn") 
   };
 
     return(
