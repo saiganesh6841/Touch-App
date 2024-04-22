@@ -40,6 +40,8 @@ const CardPosts = () => {
 
 
   console.log(posts)
+  
+ 
 
   const dispatch = useDispatch();
   const [offset, setOffset] = useState(0);
@@ -50,6 +52,19 @@ const CardPosts = () => {
   const [comments, setComments] = useState([]);
   const [commentText, setCommentText] = useState('');
   const [likeStatus, setLikeStatus] = useState({});
+  const [likeCount, setLikeCount] = useState({});
+  const [ll,setLL]=useState(null)
+
+  useEffect(() => {
+    if (posts && posts.length > 0) {
+      const newLikeCountsObj = posts.reduce((acc, post) => {
+        acc[post.postid || post.reels_id] = post.like_count;
+        return acc;
+      }, {});
+      setLikeCount(newLikeCountsObj);
+    }
+  }, [1]);
+  
 
   const token = localStorage.getItem('token');
   const headers = {
@@ -103,7 +118,6 @@ const CardPosts = () => {
     });
   };
 
-console.log(comments)
 
 //submit likes
   const handleLike = (postId) => {
@@ -111,14 +125,13 @@ console.log(comments)
 
     // Toggle the like status (1 -> 0, 0 -> 1)
     const updatedLikeStatus = currentLikeStatus === 1 ? 0 : 1;
-
+    
     // Update the like status for the post
     setLikeStatus({
         ...likeStatus,
         [postId]: updatedLikeStatus
     });
- 
-   
+
     axios.post('https://touchapp.in/api/postLike', {
       post_id: postId,
       reaction_id: updatedLikeStatus.toString()
@@ -222,7 +235,7 @@ const fetchPosts = () => {
        loader={<h1>Loading....</h1>}
       >
    {posts && posts.map((post, ind)=>(
-    <Card key={ind} style={{ maxWidth: 545, marginBottom: "10px", backgroundColor: '#F7F4E9' }}>
+    <Card key={ind} style={{ maxWidth: 575, marginBottom: "10px", backgroundColor: '#F7F4E9' }}>
 
     <CardHeader
       avatar={
@@ -296,7 +309,8 @@ const fetchPosts = () => {
         aria-label="add to favorites"
          onClick={() => handleLike(post.postid ? post.postid : post.reels_id)}
         >
-              <span>{post.like_count}</span>
+          <span>{post.like_count}</span>
+               {/* <span>{likeCount[post.postid ? post.postid : post.reels_id]}</span> */}
               <FavoriteIcon style={{  color: likeStatus[post.postid ? post.postid : post.reels_id] === 1 ? 'red' : 'lightgrey' }} />
             </IconButton>
             

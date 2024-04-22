@@ -31,7 +31,7 @@ const HomePage=()=>{
 
  
 
-    const paperStyle={padding :20,width:600 , margin:"0px auto",backgroundColor:"#485563"}
+    const paperStyle={padding :20,width:700 , margin:"0px auto",backgroundColor:"#485563"}
     const camStyle={color:"white",backgroundColor:"white",width:"55px",height:"55px"}
     const nameStyle = {display: "inline",color: "red",fontSize: "44px",marginLeft: "10px",flexGrow: 1,background: "linear-gradient(135deg, #A80306, #E57E75)",WebkitBackgroundClip: "text",backgroundClip: "text",color: "transparent",fontFamily: "Merienda, cursive"
     };
@@ -53,9 +53,10 @@ const HomePage=()=>{
             <Avatar style={profileStyle} />
             </Link>
               </Grid>
-
-              <CardPosts/>
-
+              <br/><br/>
+              <div style={{ display: "flex", justifyContent: "center" }}>
+              <CardPosts />
+            </div>
             </Paper>
         </Grid>
        </div>
